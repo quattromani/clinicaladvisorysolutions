@@ -5,142 +5,85 @@ module.exports = function(grunt) {
   require('time-grunt')(grunt);
   require('load-grunt-tasks')(grunt);
 
-  // Project configuration.
-  var gruntConfig = {
 
-    config: {
-      src: 'src'
+grunt.initConfig({
+  pkg: grunt.file.readJSON('package.json'),
+
+  concat: {
+    dist: {
+      src: [
+      'js/scripts/*.js'
+      ],
+      dest: 'js/production.js',
+    }
+  },
+
+  uglify: {
+    build: {
+      src: 'js/production.js',
+      dest: 'js/production.min.js'
+    }
+  },
+
+  sass: {
+    dist: {
+      files: {
+        'css/main.css' : 'css/scss/main.scss'
+      }
+    }
+  },
+
+  postcss: {
+    options: {
+      map: true,
+
+      processors: [
+        require('pixrem')(),
+        require('autoprefixer')({browsers: 'last 2 versions'}),
+        require('cssnano')()
+      ]
     },
+    dist: {
+      files: {
+        'css/main.css': ['css/main.css']
+      }
+    }
+  },
 
-    concat: {
+  criticalcss: {
+    custom: {
       options: {
-        separator: ';'
-      },
-      dist: {
-        src: ['src/js/*.js'],
-        dest: '<%= config.dist %>/js/production.min.js'
+        url: "http://localhost:4000",
+        outputfile: "_includes/critical.css",
+        filename: "css/main.css",
+        buffer: 800*1024
       }
-    },
+    }
+  },
 
-    uglify: {
-      build: {
-        src: '<%= config.dist %>/js/production.min.js',
-        dest: '<%= config.dist %>/js/production.min.js'
-      }
-    },
-
-    sass: {
-      dist: {
-        files: {
-          '<%= config.src %>/css/build/main.css' : '<%= config.src %>/css/scss/main.scss'
-        }
-      }
-    },
-
-    watch: {
-      assemble: {
-        files: ['<%= config.src %>/{content,data,templates,css/scss,js}/{,*/}*.{md,hbs,yml,scss,js}'],
-        tasks: ['build']
-      },
+  watch: {
+    options: {
       livereload: {
-        options: {
-          livereload: '<%= connect.options.livereload %>'
-        },
-        files: [
-          '<%= config.dist %>/{,*/}*.html',
-          '<%= config.dist %>/{,*/}*.scss',
-          '<%= config.dist %>/{,*/}*.js',
-          '<%= config.dist %>/assets/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
-        ]
+        port: 4000,
+        key: grunt.file.read('/Users/Q/Sites/livereload.key'),
+        cert: grunt.file.read('/Users/Q/Sites/livereload.crt'),
+        files: ['_site/**/*'],
       }
     },
-
-    postcss: {
-      options: {
-        map: {
-          inline: false, // save all sourcemaps as separate files...
-          annotation: '<%= config.dist %>/css/' // ...to the specified directory
-        },
-
-        processors: [
-          require('pixrem')(),
-          require('autoprefixer')({browsers: 'last 2 versions'}),
-          require('cssnano')()
-        ]
-      },
-      dist: {
-        files: {
-          '<%= config.dist %>/css/main.css': ['<%= config.src %>/css/build/main.css']
-        }
-      }
+    scripts: {
+      files: ['js/*.js'],
+      tasks: ['concat', 'uglify'],
     },
-
-    connect: {
-      options: {
-        port: 9001,
-        livereload: 35729,
-
-        hostname: 'localhost'
-      },
-        livereload: {
-          options: {
-            open: true,
-            base: [
-              '<%= config.dist %>'
-          ]
-        }
-      }
-    },
-
-    copy: {
-      images: {
-        files: [{
-          expand: true,
-          cwd: '<%= config.src %>/images/',
-          src: ['**/*.{png,jpg,svg}'],
-          dest:'<%= config.dist %>/mimages/'
-        }]
-      },
-
-      scripts: {
-        files: [{
-          expand: true,
-          cwd: '<%= config.src %>/js/vendor',
-          src: ['**/*.js'],
-          dest:'<%= config.dist %>/js/vendor/'
-        }]
-      }
+    css: {
+      files: ['css/scss/**/*.scss'],
+      tasks: ['sass', 'postcss'],
     }
   }
 
-  // run universal design to any mall `grunt server --company=ColonieMgmt --mall=yorktown`
-  grunt.registerTask('upload', 'Upload code to specified mall.', function(n) {
-    var company = grunt.option('company');
-    var mall = grunt.option('mall');
-    gruntConfig.config.dist = '../../../' + company + '/mall-' + mall;
-    grunt.file.write('src/css/scss/_vars.scss', '@import "../../../../../../' + company + '/mall-'  + mall + '/css/vars/vars";');
-  });
+});
 
-  grunt.registerTask('server', [
-    'build',
-    'connect:livereload',
-    'watch'
-    ]);
+grunt.registerTask('build', ['concat', 'uglify', 'sass', 'postcss', 'watch']);
 
-  grunt.registerTask('build', [
-    'upload',
-    'concat',
-    'uglify',
-    'sass',
-    'postcss',
-    'copy'
-    ]);
-
-  grunt.registerTask('default', [
-    'build'
-    ]);
-
-  grunt.initConfig(gruntConfig);
+grunt.registerTask('prod', ['concat', 'uglify', 'sass', 'postcss', 'criticalcss', 'watch']);
 
 };
-

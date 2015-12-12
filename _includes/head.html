@@ -1,12 +1,52 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us">
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <title>{% if page.title %}{{ page.title }} | {% endif %} {{ site.title }}</title>
 
-  <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="dns-prefetch" href="//themes.googleusercontent.com">
+  <link href='https://fonts.googleapis.com/css?family=Lato|Merriweather' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/css/main.css">
+
+  <!-- Prerender Resume page -->
+  <link rel="prerender" href="{{ site.url }}/resume">
+
+  <meta name="apple-mobile-web-app-title" content="Quattromani">
+  {% if page.description %}
+  <meta name="description" content="{{ page.description }}" />
+  {% else %}
+  <meta name="description" content="{{ site.description }}" />
+  {% endif %}
+  <meta name="author" content="{{ site.author }}">
+  <meta name="rating" content="general">
+
+  <link rel="canonical" href="{{ site.url }}">
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  {% include twitter_card.html %}
+
+  {% include og_tags.html %}
+
+  {% include schema_org.html %}
+
 </head>
+
+<body class="{{ page.class }}">
+    <!--[if lt IE 9]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+  {% include header.html %}
+  {% include nav.html %}
+
+  <!-- Begin Content Wrapper -->
+  <main role="main">

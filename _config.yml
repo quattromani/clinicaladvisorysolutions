@@ -12,3 +12,20 @@ github_username:  quattromani
 
 # Build settings
 markdown: kramdown
+
+exclude: ['node_modules', 'scss', 'DAM']
+
+google_analytics: true
+google_analytics_id: UA-50387096-8
+jquery_version: 1.11.2
+
+sitemap:
+  file: "/sitemap.xml"
+  exclude:
+      - "/atom.xml"
+      - "/feed.xml"
+      - "/feed/index.xml"
+  include_posts:
+      - "/index.html"
+  change_frequency_name: "change_frequency"
+  priority_name: "priorit
