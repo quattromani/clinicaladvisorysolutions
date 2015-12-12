@@ -20,8 +20,9 @@
   }
 
   .card {
-    border: 1px solid $color-grey;
+    border-radius: 5px;
     background-color: $color-light-grey;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
 
     @include media($mobile) {
       margin-bottom: $base-spacing;
@@ -30,12 +31,17 @@
     h6 {
       @include padding($base-spacing / 2);
       margin-bottom: 0;
-      background-color: $color-white;
+      border-radius: $base-border-radius $base-border-radius 0 0;
+      border-bottom: 3px solid $color-brand-primary-complimentary;
+      background-color: $color-brand-primary;
+      color: $color-brand-secondary;
+      text-shadow: 0px 2px 3px mix($color-white, $color-brand-primary, 25%);
       text-align: center;
     }
 
     div {
       @include padding($base-spacing);
+      box-shadow: inset 0 7px 9px -7px rgba(0,0,0,.4);
     }
   }
 }
@@ -57,4 +63,8 @@
     padding-right: $base-spacing;
     padding-left: $base-spacing;
   }
+}
+
+.thank-you {
+  text-align: center;
 }

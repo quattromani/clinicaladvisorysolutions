@@ -1,6 +1,8 @@
 @charset "UTF-8";
 
 header[role=banner] {
+  background-color: $color-dark-grey;
+
   img {
     margin: 0 auto;
   }

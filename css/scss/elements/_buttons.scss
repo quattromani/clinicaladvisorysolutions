@@ -10,8 +10,9 @@ button {
   @include icon-after($fa-var-chevron-right);
   @include transition;
   bottom: $base-spacing/2;
+  border-radius: $base-border-radius;
   background-color: $base-button-bg;
-  font-weight: 400;
+  font-weight: 700;
   color: $base-button-color;
   border: 0;
   text-align: center;
