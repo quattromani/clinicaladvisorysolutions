@@ -1,5 +1,5 @@
 // Make room for the fixed header
-navHeight = $('nav').outerHeight();
+headerHeight = $('header[role=banner]').outerHeight();
 
 $('a[href*=#]:not([href=#])').click(function() {
 
@@ -14,7 +14,7 @@ $('a[href*=#]:not([href=#])').click(function() {
     target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
      if (target.length) {
        $('html,body').animate({
-           scrollTop: target.offset().top - navHeight
+           scrollTop: target.offset().top - headerHeight
       }, 1000);
       return false;
     }

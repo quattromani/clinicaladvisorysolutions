@@ -61,11 +61,12 @@
       @include padding(0);
 
       &:after {
-        content: '|';
         @include padding(0 ($base-spacing / 2));
+        content: '|';
       }
 
-      &.js-last:after {
+      &:last-child:after {
+        @include padding;
         content: '';
       }
     }

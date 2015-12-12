@@ -5,5 +5,9 @@
     @include vertical-align(absolute);
   }
 
+  img {
+    height: 50px;
+  }
+
   z-index: 999;
 }

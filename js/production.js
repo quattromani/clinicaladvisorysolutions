@@ -22,6 +22,13 @@ $(document).ready(function() {
   }
 });
 
+// Add classes to first and last li's for every instance
+$(function() {
+  // Add classes to first and last of each list
+  $('li:first-child').addClass('js-first');
+  $('li:last-child').addClass('js-last');
+});
+
 // Make room for the fixed header
 headerHeight = $('header[role=banner]').outerHeight();
 navHeight = $('nav[role=navigation]').outerHeight();
@@ -62,7 +69,7 @@ function revealFooter() {
 }
 
 // Make room for the fixed header
-navHeight = $('nav').outerHeight();
+headerHeight = $('header[role=banner]').outerHeight();
 
 $('a[href*=#]:not([href=#])').click(function() {
 
@@ -77,7 +84,7 @@ $('a[href*=#]:not([href=#])').click(function() {
     target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
      if (target.length) {
        $('html,body').animate({
-           scrollTop: target.offset().top - navHeight
+           scrollTop: target.offset().top - headerHeight
       }, 1000);
       return false;
     }

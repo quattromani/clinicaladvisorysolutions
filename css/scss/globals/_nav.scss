@@ -35,6 +35,7 @@ nav[role=navigation] {
 
     ul {
       @include margin(0);
+      @include horizontal-list(inline-block, piped);
       display: table-row;
       text-align: $nav-alignment;
 
@@ -50,7 +51,6 @@ nav[role=navigation] {
         a {
           @include padding($base-spacing/2 $base-spacing);
           @include font-family($base-font-family-alt);
-          display: block;
           font-weight: $nav-font-weight;
           vertical-align: middle;
           color: $nav-color;
@@ -66,7 +66,7 @@ nav[role=navigation] {
         &.active,
         &:hover {
           a {
-            color: $color-white;
+            color: $nav-color-hover;
             text-shadow: 0;
           }
         }

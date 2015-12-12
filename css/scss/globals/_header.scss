@@ -1,12 +1,16 @@
 @charset "UTF-8";
 
 header[role=banner] {
-  @include padding($base-spacing);
+  @include padding($base-spacing * 1.5);
   position: fixed;
   top: 0;
   width: 100%;
   background-color: $color-brand-primary;
   z-index: 999;
+
+  @include media($mobile) {
+    @include padding($base-spacing);
+  }
 }
 
 .banner {
