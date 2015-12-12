@@ -1,68 +1,5 @@
-$('a').each(function() {
-  var a = new RegExp('/' + window.location.host + '/');
-  if(!a.test(this.href)) {
-    $(this).click(function(event) {
-      event.preventDefault();
-      event.stopPropagation();
-      window.open(this.href, '_blank');
-    });
-  }
-});
-
 var smallBreakPoint = 640;
 var mediumBreakPoint = 768;
-
- /* ==========================================================================
-    Styleguide -- Version: 0.4.1 - Updated: 2/22/2014
-    ========================================================================== */
-
-// Create Hex color code from color return
-function hexc(colorval) {
-	var parts = colorval.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
-	delete(parts[0]);
-	for (var i = 1; i <= 3; ++i) {
-		parts[i] = parseInt(parts[i]).toString(16);
-		if (parts[i].length == 1) parts[i] = '0' + parts[i];
-	}
-	color = '#' + parts.join('');
-}
-
-// Get color value of swatch and print to div
-var color = '';
-$('.swatch').each(function() {
-	var classList = $(this).children('.swatch-color').attr('class').split(' ');
-	for(i=0; i <= classList.length-1; i++){
-		if(classList[i].match(/color-/g)){
-			$(this).children('.swatch-info').prepend('<p>$' + classList[i] + '</p>');
-			break;
-		}
-	}
-	var x = $(this).children('.swatch-color').css('backgroundColor');
-	hexc(x);
-	$(this).children('.swatch-info').append('<p>' + color + '</p>');
-	$(this).children('.swatch-info').append('<p>' + x + '</p>');
-});
-
-(function($) {
-
-	$.fn.vs = function() {
-        // View source buttons
-        $('.vs').click(function(){
-        	$(this).parent().next().find('.prettyprint').toggle();
-        	$(this).not('.disabled').toggleClass('js-active');
-        	return false;
-        });
-      }
-
-    }(jQuery));
-
-$('.vs').vs();
-
-// Get font-family property and return
-$('.fonts').each(function(){
-	var fonts = $(this).css('font-family');
-	$(this).prepend(fonts);
-});
 
 function equalHeight(group) {
   if ($(window).width() > mediumBreakPoint) {
@@ -83,7 +20,29 @@ $(document).ready(function() {
   equalHeight($('.card'));
 });
 
+// Make room for the fixed header
+headerHeight = $('header[role=banner]').outerHeight();
+navHeight = $('nav[role=navigation]').outerHeight();
 
+$(function() {
+  $(".open-panel").click(function(){
+    if($('html').hasClass('open-nav')) {
+      $('html').removeClass('open-nav');
+    } else {
+      $('html').addClass('open-nav');
+      $('.wrap').css('margin-top', 0);
+    }
+    $(this).toggleClass('active');
+  });
+});
+
+$(function() {
+  if ($(window).width() > mediumBreakPoint) {
+    $('.banner').css('margin-top', headerHeight);
+  } else {
+    $('.banner').css('margin-top', headerHeight);
+  }
+});
 
 $(document).ready(function(){
 	revealFooter();
@@ -101,7 +60,7 @@ function revealFooter() {
 }
 
 // Make room for the fixed header
-navHeight = $('nav').height();
+navHeight = $('nav').outerHeight();
 
 $('a[href*=#]:not([href=#])').click(function() {
 

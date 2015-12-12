@@ -4,6 +4,7 @@
   @include padding(($base-spacing * 2) 0);
 
   @include media($mobile) {
+    padding-top: 0;
     padding-right: $base-spacing;
     padding-left: $base-spacing;
   }
@@ -50,6 +51,11 @@
   @include padding(($base-spacing * 2) 0);
   background-color: $color-light-grey;
 
+  img {
+    border: 8px solid $color-white;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
+  }
+
   @include media($mobile) {
     padding-right: $base-spacing;
     padding-left: $base-spacing;
@@ -58,6 +64,10 @@
 
 .news {
   @include padding(($base-spacing * 2) 0);
+
+  ul {
+    @include vertical-list(lined);
+  }
 
   @include media($mobile) {
     padding-right: $base-spacing;

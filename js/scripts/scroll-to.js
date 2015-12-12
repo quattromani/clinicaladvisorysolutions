@@ -1,5 +1,5 @@
 // Make room for the fixed header
-navHeight = $('nav').height();
+navHeight = $('nav').outerHeight();
 
 $('a[href*=#]:not([href=#])').click(function() {
 

@@ -1,9 +1,19 @@
 @charset "UTF-8";
 
 header[role=banner] {
-  background-color: $color-dark-grey;
+  @include padding($base-spacing);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: $color-brand-primary;
+  z-index: 999;
+}
+
+.banner {
+  background-color: $color-brand-primary-complimentary;
 
   img {
+    @include responsive-image;
     margin: 0 auto;
   }
 }

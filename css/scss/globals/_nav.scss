@@ -18,8 +18,7 @@
 
 // Begin Nav
 nav[role=navigation] {
-  position: relative;
-  clear: both;
+  top: 0;
   width: 100%;
   background-color: $nav-bg;
   z-index: 999;
@@ -67,7 +66,8 @@ nav[role=navigation] {
         &.active,
         &:hover {
           a {
-            background-color: $nav-color-hover;
+            color: $color-white;
+            text-shadow: 0;
           }
         }
       }
@@ -252,7 +252,7 @@ a.close-panel {
 
 .open-panel {
   position: absolute;
-  top: $base-spacing/2;
+  top: $base-spacing;
   z-index: 10;
 
   @if $nav-hamburger-side == right {

@@ -16,6 +16,26 @@ a {
     color: $base-link-color-hover;
   }
 
+  &.muted,
+  .muted & {
+    color: $color-light-grey;
+  }
+
+  &:active,
+  &:hover {
+    outline: 0;
+  }
+
+  &[href^="http://"],
+  &[href^="https://"] {
+    @include icon-after($fa-var-external-link);
+    color: $link-external-color;
+
+    &:hover {
+      color: $link-external-color-hover;
+    }
+  }
+
   img {
     border: 0 none;
     text-decoration: none;

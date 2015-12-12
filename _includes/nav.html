@@ -1,20 +1,28 @@
 {% assign current = page.url | split: '/' %}
-<a href="#" class="open-panel" aria-label="navigation menu"><span></span></a>
+<header role="banner">
 
-<nav role="navigation">
+  <div class="container">
 
-    <div class="menu" role="menubar">
-      <ul role="menu">
-        {% for nav in site.data.nav %}
-        {% if nav.name == page.parent %}
-        <li class="active" role="menuitem">
-          {% else %}
-          <li role="menuitem">
-            {% endif %}
-            <a href="{{ nav.url }}">{{ nav.name }}</a>
+    <div class="logo">
+      <img src="" alt="Clinical Advisory Solutions, LLC. logo">
+    </div>
+
+    <nav role="navigation">
+      <div class="menu" role="menubar">
+        <ul role="menu">
+          {% for nav in site.data.nav %}
+          {% if nav.name == page.parent %}
+          <li class="active" role="menuitem">
+            {% else %}
+            <li role="menuitem">
+              {% endif %}
+              <a href="{{ nav.url }}">{{ nav.name }}</a>
+            </li>
+            {% endfor %}
           </li>
-          {% endfor %}
         </ul>
       </div>
+    </nav>
 
-  </nav>
+  </div>
+</header>

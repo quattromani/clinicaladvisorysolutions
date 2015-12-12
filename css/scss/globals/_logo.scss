@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+.logo {
+  @include media($desktop) {
+    @include vertical-align(absolute);
+  }
+
+  z-index: 999;
+}

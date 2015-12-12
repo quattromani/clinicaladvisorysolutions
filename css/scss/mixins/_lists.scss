@@ -24,7 +24,7 @@
 
   @if $arg == lined {
     & > li {
-      border-bottom: 1px solid lighten($color-dark-grey, 40%);
+      border-bottom: 1px dotted $color-grey;
 
       &:last-of-type {
         border-bottom: 0;
