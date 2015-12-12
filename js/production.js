@@ -64,7 +64,41 @@ $('.fonts').each(function(){
 	$(this).prepend(fonts);
 });
 
+function equalHeight(group) {
+  if ($(window).width() > mediumBreakPoint) {
+    var tallest = 0;
+    group.each(function() {
+      var thisHeight = $(this).outerHeight();;
+      if(thisHeight > tallest) {
+        tallest = thisHeight;
+      }
+    });
+    group.height(tallest);
+  } else {
 
+  }
+}
+
+$(document).ready(function() {
+  equalHeight($('.card'));
+});
+
+
+
+$(document).ready(function(){
+	revealFooter();
+});
+
+$(window).on("resize", function(event) {
+	revealFooter();
+});
+
+function revealFooter() {
+	reveal = $('footer[role=contentinfo]').outerHeight();
+
+	$('.reveal-wrapper').css({'margin-bottom': reveal});
+	$('footer[role=contentinfo]').css({'height': reveal});
+}
 
 // Make room for the fixed header
 navHeight = $('nav').height();

@@ -52,9 +52,10 @@ nav[role=navigation] {
           @include padding($base-spacing/2 $base-spacing);
           @include font-family($base-font-family-alt);
           display: block;
-          font-weight: 200;
+          font-weight: $nav-font-weight;
           vertical-align: middle;
           color: $nav-color;
+          text-shadow: 0px 2px 3px mix($color-white, $color-brand-primary, 25%);
           text-transform: $nav-text-transform;
           letter-spacing: $nav-letter-spacing;
 

@@ -1,5 +1,30 @@
 @charset "UTF-8";
 
-footer {
+.pre-footer {
+  @include padding($base-spacing);
+  background-color: $color-brand-primary;
+  color: $color-brand-secondary;
+  text-shadow: 0px 2px 3px mix($color-white, $color-brand-primary, 25%);
+}
 
+footer {
+  @include padding($base-spacing);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: $color-brand-primary-complimentary;
+  color: $color-white;
+
+  address {
+    margin-bottom: $base-spacing;
+  }
+}
+
+.reveal-wrapper {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1;
 }

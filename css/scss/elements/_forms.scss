@@ -15,19 +15,16 @@ label {
 input[type]:not([type=range]):not([type=submit]),
 textarea,
 select {
-  @include padding(.35em, .5em, .35em, 0);
+  @include padding(($base-spacing / 3) ($base-spacing / 2));
   @include margin(0 0 $base-spacing);
   @include border-radius;
-  @include rgba($color-black,.0);
   @include transition(all, .2s, ease-in-out);
   width: 100%;
   max-width: 100%;
   border: 0;
-  border-bottom: 1px solid currentColor;
   outline: none;
   font-family: $base-font-family-alt;
   font-weight: 300;
-  color: inherit;
 
   &[type='search'] {
     &::-webkit-search-decoration,
@@ -131,7 +128,7 @@ input::-webkit-inner-spin-button {
 
 @include placeholder {
   color: $color-grey;
-  font-weight: 100;
+  font-weight: 400;
 }
 
 .formitem {

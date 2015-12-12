@@ -1,11 +1,8 @@
-- name: "Section"
-  url: "/#1"
+- name: "About"
+  url: "/#about"
 
-- name: "Section"
-  url: "/#2"
+- name: "Services"
+  url: "/#services"
 
-- name: "Section"
-  url: "/#3"
-
-- name: "Section"
-  url: "/#4"
+- name: "Articles"
+  url: "/#articles"

@@ -1,15 +1,15 @@
 // =Headings
-$heading-font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$heading-font-family-alt: 'Merriweather', 'Times New Roman', Times, Baskerville, Georgia, serif;
-$heading-color-primary: $color-brand-primary;
-$heading-color-secondary: $color-brand-secondary;
+$heading-font-family: $base-font-family-alt;
+$heading-font-family-alt: $base-font-family-alt;
+$heading-color-primary: $color-brand-primary-complimentary;
+$heading-color-secondary: $color-brand-primary-complimentary;
 $heading-line-height: 1.618;
 
 $heading-list: (
-  h1   32   200   $heading-font-family    uppercase,
-  h2   28   200   $heading-font-family    uppercase,
+  h1   36   700   $heading-font-family    uppercase,
+  h2   30   700   $heading-font-family    uppercase,
   h3   24   700   $heading-font-family    uppercase,
-  h4   21   200   $heading-font-family    uppercase,
+  h4   18   200   $heading-font-family    uppercase,
   h5   18   700   $heading-font-family    uppercase,
-  h6   16   100   $heading-font-family    uppercase
+  h6   16   700   $heading-font-family    uppercase
 );

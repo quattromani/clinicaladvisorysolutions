@@ -1,15 +1,15 @@
 // =Nav
 $nav-alignment: left;
 $nav-positioning: -49px;
-$nav-bg: rgba($color-black, .8);
+$nav-bg: $color-brand-primary;
 $nav-mobile-bg: $color-white;
 $nav-bg-hover: null;
 $nav-font-family: $heading-font-family-alt;
 $nav-font-size: 16;
-$nav-font-weight: 300;
+$nav-font-weight: 700;
 $nav-text-transform: uppercase;
 $nav-letter-spacing: .03em;
-$nav-color: $color-white;
+$nav-color: $color-brand-secondary;
 $nav-color-hover: $base-link-color-hover;
 $nav-dropdown-bg: $color-brand-primary;
 $nav-dropdown-bg-hover: $color-brand-primary-complimentary;

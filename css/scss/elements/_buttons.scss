@@ -7,15 +7,17 @@ button {
   @include padding($base-spacing/2 $base-spacing);
   @include font-family($button-font-family);
   @include font-size($button-font-size);
+  @include icon-after($fa-var-chevron-right);
   @include transition;
   bottom: $base-spacing/2;
   background-color: $base-button-bg;
-  font-weight: 200;
+  font-weight: 400;
   color: $base-button-color;
   border: 0;
   text-align: center;
   cursor: pointer;
   line-height: initial;
+  text-shadow: 0px 2px 3px mix($color-white, $color-brand-primary, 25%);
   text-transform: $button-text-transform;
   letter-spacing: .075em;
 
@@ -23,15 +25,11 @@ button {
     color: $color-white;
   }
 
-  &:hover {
-    background-color: $base-button-bg-hover;
-    color: $base-button-color-hover;
-  }
-
+  &:hover,
   &:focus {
     background-color: $base-button-bg-hover;
-    background-image: 0;
-    outline: none;
+    color: $base-button-color-hover;
+    text-shadow: 0px 2px 3px mix($color-black, $color-brand-primary-complimentary, 25%);
   }
 
   &.btn-error {
