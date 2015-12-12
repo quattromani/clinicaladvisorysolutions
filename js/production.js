@@ -17,7 +17,9 @@ function equalHeight(group) {
 }
 
 $(document).ready(function() {
-  equalHeight($('.card'));
+  if ($(window).width() > mediumBreakPoint) {
+    equalHeight($('.card'));
+  }
 });
 
 // Make room for the fixed header

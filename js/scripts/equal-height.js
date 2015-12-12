@@ -14,5 +14,7 @@ function equalHeight(group) {
 }
 
 $(document).ready(function() {
-  equalHeight($('.card'));
+  if ($(window).width() > mediumBreakPoint) {
+    equalHeight($('.card'));
+  }
 });
