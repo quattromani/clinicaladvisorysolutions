@@ -12,8 +12,8 @@
 
 .services {
   @include padding(($base-spacing * 2) 0);
+  position: relative;
   background: url(/images/grey_%402X.png);
-  box-shadow: inset 0 7px 9px -7px rgba(0,0,0,.4), inset 0 -7px 9px -7px rgba(0,0,0,.4);
 
   @include media($mobile) {
     padding-right: $base-spacing;
@@ -23,7 +23,7 @@
   .card {
     border-radius: 5px;
     background-color: $color-light-grey;
-    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 1px 2px 0px rgba($color-brand-primary-complimentary, .15);
 
     @include media($mobile) {
       margin-bottom: $base-spacing;
@@ -43,14 +43,36 @@
     div {
       @include padding($base-spacing);
       text-align: center;
-      box-shadow: inset 0 7px 9px -7px rgba(0,0,0,.4);
+      box-shadow: inset 0 7px 9px -7px rgba($color-brand-primary-complimentary, .4);
     }
+  }
+
+  &:before,
+  &:after {
+    @include horizontal-center(absolute);
+    content: "";
+    position: absolute;
+    width: 90%;
+    height: 4px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba($color-brand-primary-complimentary, .4);
+    z-index: 0;
+  }
+
+  &:before {
+    top: -4px;
+  }
+
+  &:after {
+    bottom: -4px;
   }
 }
 
 .about {
   @include padding(($base-spacing * 2) 0);
+  position: relative;
   background-color: $color-light-grey;
+  z-index: 1;
 
   img {
     border: 8px solid $color-white;
@@ -65,6 +87,9 @@
 
 .news {
   @include padding(($base-spacing * 2) 0);
+  position: relative;
+  background-color: $color-white;
+  z-index: 1;
 
   ul {
     @include vertical-list(lined);

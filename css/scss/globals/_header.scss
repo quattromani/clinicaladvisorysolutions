@@ -7,6 +7,7 @@ header[role=banner] {
   width: 100%;
   background-color: $color-brand-primary;
   z-index: 999;
+  box-shadow: 0 0 10px rgba($color-brand-primary-complimentary, .4);
 
   @include media($mobile) {
     @include padding($base-spacing);

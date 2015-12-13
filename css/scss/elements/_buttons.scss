@@ -18,7 +18,7 @@ button {
   text-align: center;
   cursor: pointer;
   line-height: initial;
-  text-shadow: 0px 2px 3px mix($color-white, $color-brand-primary, 25%);
+  text-shadow: 0px 2px 3px mix($color-white, $base-button-bg, 25%);
   text-transform: $button-text-transform;
   letter-spacing: .075em;
 
@@ -29,66 +29,8 @@ button {
   &:hover,
   &:focus {
     background-color: $base-button-bg-hover;
-    color: $base-button-color-hover;
-    text-shadow: 0px 2px 3px mix($color-black, $color-brand-primary-complimentary, 25%);
-  }
-
-  &.btn-error {
-    background: $color-primary-red;
-    color: $color-white;
-
-    &:hover {
-      background: lighten($color-primary-red, 25%);
-    }
-  }
-
-  &:disabled,
-  &.js-disabled,
-  &.disabled {
-    cursor: default;
-    background: $color-light-grey;
-    color: $base-font-color;
-    pointer-events: none;
-
-    &:hover,
-    &:active {
-      background: $base-button-color-hover;
-    }
-  }
-
-  &.block {
-    display: block;
-    width: 100%;
-    text-align: center;
-  }
-
-  &.btn-xl {
-    @include padding(.75em, ($base-spacing * 2));
-  }
-
-  &.btn-lg {
-    @include padding(.5em, ($base-spacing * 1.5));
-  }
-
-  &.btn-sm {
-    min-width: 0;
-    @include padding(($base-spacing / 6), ($base-spacing / 1.5));
-  }
-
-  @media (max-width: $mobile) {
-    &.mobile-full {
-      display: block;
-      width: 100%;
-
-      a {
-        display: block;
-        text-align: center;
-      }
-
-      & + & {
-        margin-top: $base-spacing;
-      }
-    }
+    color: $base-button-color;
+    text-shadow: none;
   }
 }
 

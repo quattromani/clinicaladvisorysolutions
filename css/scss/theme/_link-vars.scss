@@ -1,15 +1,15 @@
 // =Links
 $base-link-bg: null;
 $base-link-color: $color-brand-primary;
-$base-link-color-hover: $color-brand-primary-complimentary;
+$base-link-color-hover: mix($color-black, $color-brand-primary, 10%);
 $base-link-weight: 400;
 $base-link-text-decoration: none !default;
 $base-link-color-alt: $color-brand-primary;
-$base-link-color-alt-hover: mix($color-brand-primary, black, 10%);
+$base-link-color-alt-hover: mix($color-black, $color-brand-primary, 10%);
 
 // =External Links
-$link-external-color: $base-link-color-hover;
-$link-external-color-hover: $base-link-color;
+$link-external-color: $base-link-color;
+$link-external-color-hover: $base-link-color-hover;
 
 // =Email Links
 $email-link-color: $base-link-color;
