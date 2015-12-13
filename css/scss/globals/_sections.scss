@@ -3,6 +3,11 @@
 .intro {
   @include padding(($base-spacing * 2) 0);
 
+  section {
+    max-width: 720px;
+    text-align: center;
+  }
+
   @include media($mobile) {
     padding-top: 0;
     padding-right: $base-spacing;
