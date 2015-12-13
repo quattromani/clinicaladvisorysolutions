@@ -65,7 +65,7 @@ function revealFooter() {
 	reveal = $('footer[role=contentinfo]').outerHeight();
 
 	$('.reveal-wrapper').css({'margin-bottom': reveal});
-	$('footer[role=contentinfo]').css({'height': reveal});
+	$('footer[role=contentinfo]').css({'height': reveal + 10});
 }
 
 // Make room for the fixed header

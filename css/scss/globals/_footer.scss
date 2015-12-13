@@ -8,7 +8,7 @@
 }
 
 footer {
-  @include padding($base-spacing);
+  @include padding(($base-spacing * 2) $base-spacing);
   position: fixed;
   bottom: 0;
   width: 100%;
