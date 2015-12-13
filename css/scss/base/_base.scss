@@ -21,7 +21,7 @@ html {
 }
 
 html, body {
-  overflow-x:hidden;
+  overflow-x: hidden;
 }
 
 *,
@@ -47,8 +47,10 @@ textarea {
   line-height: $base-line-height;
 }
 
-[hidden], template {
-  display: none; }
+[hidden],
+template {
+  display: none;
+}
 
 img,
 canvas,

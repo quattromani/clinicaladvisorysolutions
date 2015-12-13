@@ -22,10 +22,6 @@ button {
   text-transform: $button-text-transform;
   letter-spacing: .075em;
 
-  a & {
-    color: $color-white;
-  }
-
   &:hover,
   &:focus {
     background-color: $base-button-bg-hover;
@@ -35,7 +31,6 @@ button {
 }
 
 /* Firefox */
-
 @-moz-document url-prefix() {
   // Remove button padding in FF
   button::-moz-focus-inner {

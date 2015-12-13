@@ -5,9 +5,9 @@ header[role=banner] {
   position: fixed;
   top: 0;
   width: 100%;
+  border-bottom: 3px solid $color-brand-primary-complimentary;
   background-color: $color-brand-primary;
   z-index: 999;
-  box-shadow: 0 0 10px rgba($color-brand-primary-complimentary, .4);
 
   @include media($mobile) {
     @include padding($base-spacing);
@@ -15,7 +15,7 @@ header[role=banner] {
 }
 
 .banner {
-  @include padding($base-spacing 0);
+  @include padding($base-spacing);
   background: url(/images/banner.png);
 
   h3 {

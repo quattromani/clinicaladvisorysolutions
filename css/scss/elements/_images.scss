@@ -1,5 +1,10 @@
 @charset "UTF-8";
 
+figure {
+  position: relative;
+  width: 100%;
+}
+
 img {
   display: inherit;
   height: auto;
@@ -7,11 +12,6 @@ img {
   // style the alt text
   font-style: italics;
   color: $color-brand-primary-complimentary;
-}
-
-figure {
-  position: relative;
-  width: 100%;
 }
 
 figcaption {
