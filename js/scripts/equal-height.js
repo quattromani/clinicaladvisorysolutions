@@ -13,7 +13,7 @@ function equalHeight(group) {
   }
 }
 
-$(document).ready(function() {
+$(window).on('load resize', function () {
   if ($(window).width() > mediumBreakPoint) {
     equalHeight($('.card'));
   }

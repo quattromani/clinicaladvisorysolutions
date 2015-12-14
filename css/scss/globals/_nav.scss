@@ -51,6 +51,7 @@ nav[role=navigation] {
         a {
           @include padding($base-spacing/2 $base-spacing);
           @include font-family($base-font-family-alt);
+          position: relative;
           font-weight: $nav-font-weight;
           vertical-align: middle;
           color: $nav-color;
@@ -58,16 +59,24 @@ nav[role=navigation] {
           text-transform: $nav-text-transform;
           letter-spacing: $nav-letter-spacing;
 
-          &:hover {
-            text-decoration: none;
+          &:before {
+            left: 50%;
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            background-color: $nav-color;
+            visibility: hidden;
+            transform: translate(-50%) scaleX(0) ;
+            transition: all 0.3s ease-in-out 0s;
           }
-        }
 
-        &.active,
-        &:hover {
-          a {
-            color: $nav-color-hover;
-            text-shadow: 0;
+          &:hover {
+            &:before {
+              visibility: visible;
+              transform: translate(-50%) scaleX(1);
+            }
           }
         }
       }

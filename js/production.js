@@ -16,7 +16,7 @@ function equalHeight(group) {
   }
 }
 
-$(document).ready(function() {
+$(window).on('load resize', function () {
   if ($(window).width() > mediumBreakPoint) {
     equalHeight($('.card'));
   }
@@ -45,13 +45,13 @@ $(function() {
   });
 });
 
-$(function() {
+$(window).on("resize", function () {
   if ($(window).width() > mediumBreakPoint) {
     $('.banner').css('margin-top', headerHeight);
   } else {
     $('.banner').css('margin-top', headerHeight);
   }
-});
+}).resize();
 
 $(document).ready(function(){
 	revealFooter();
