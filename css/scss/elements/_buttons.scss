@@ -3,7 +3,7 @@
 .btn,
 button {
   @include inline-block;
-  @include margin(0);
+  @include margin;
   @include padding($base-spacing/2 $base-spacing);
   @include font-family($button-font-family);
   @include font-size($button-font-size);
@@ -16,7 +16,6 @@ button {
   color: $base-button-color;
   border: 0;
   text-align: center;
-  cursor: pointer;
   line-height: initial;
   text-shadow: 0px 2px 3px mix($color-white, $base-button-bg, 25%);
   text-transform: $button-text-transform;
@@ -34,7 +33,7 @@ button {
 @-moz-document url-prefix() {
   // Remove button padding in FF
   button::-moz-focus-inner {
-    @include padding(0);
+    @include padding;
     border: none;
   }
 
@@ -42,7 +41,7 @@ button {
     &[type="button"]::-moz-focus-inner,
     &[type="submit"]::-moz-focus-inner,
     &[type="reset"]::-moz-focus-inner {
-      @include padding(0);
+      @include padding;
       border: none;
     }
   }

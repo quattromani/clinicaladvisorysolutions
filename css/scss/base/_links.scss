@@ -10,7 +10,6 @@ a {
   font-weight: $base-link-weight;
   color: $base-link-color;
   text-decoration: $base-link-text-decoration;
-  cursor: pointer;
 
   &:hover {
     color: $base-link-color-hover;
@@ -40,4 +39,14 @@ a {
     border: 0 none;
     text-decoration: none;
   }
+}
+
+a[href],
+input[type='submit'],
+input[type='image'],
+label[for],
+select,
+button,
+.btn {
+  cursor: pointer;
 }

@@ -1,0 +1,44 @@
+// =Web Safe Fonts
+
+// =Sans Serif
+$arial: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+$arial-black: 'Arial Black', 'Arial Bold', Gadget, sans-serif;
+$arial-narrow: 'Arial Narrow', Arial, sans-serif;
+$arial-rounded: 'Arial Rounded MT Bold', 'Helvetica Rounded', Arial, sans-serif;
+$century-gothic: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+$helvetica: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$tahoma: Tahoma, Verdana, Segoe, sans-serif;
+$trebuchet: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
+$verdana: Verdana, Geneva, sans-serif;
+
+// =Serif
+$georgia: Georgia, Times, 'Times New Roman', serif;
+$times-new-roman: TimesNewRoman, 'Times New Roman', Times, Baskerville, Georgia, serif;
+
+// =Monospaced
+$courier-new: 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace;
+
+// =Stacks
+/* The Times New Roman-based serif stack: */
+$times: Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif;
+
+/* A modern Georgia-based serif stack:*/
+$georgia: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif," "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+
+/*A more traditional Garamond-based serif stack:*/
+$garamond: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
+
+/*The Helvetica/Arial-based sans serif stack:*/
+$helvetica: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+/*The Verdana-based sans serif stack:*/
+$verdana: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
+
+/*The Trebuchet-based sans serif stack:*/
+$trebuchet: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
+
+/*The heavier “Impact” sans serif stack:*/
+$impact: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
+
+/*The monospace stack:*/
+$monospace: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
